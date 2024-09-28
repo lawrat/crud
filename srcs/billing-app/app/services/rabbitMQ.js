@@ -1,15 +1,16 @@
 const amqp = require('amqplib');
 require('dotenv').config();
-const { Order } = require('../models/orderModel'); // Chemin à ajuster selon votre structure de projet
-
-async function processOrder(Order) {
+const { Order } = require('../models/orderModel');
+async function processOrder(order) { // Renommez ici
     try {
-        console.log('Commande reçue pour insertion :', Order);
-        console.log('Commande insérée :', Order);
+        console.log('Commande reçue pour insertion :', order);
+        const newOrder = await Order.create(order); // Utilisez le modèle Order ici
+        console.log('Commande insérée :', newOrder);
     } catch (error) {
         console.error('Erreur lors du traitement de la commande:', error);
     }
 }
+
 
 async function start() {
     try {

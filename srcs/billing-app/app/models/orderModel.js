@@ -19,4 +19,5 @@ const Order = sequelize.define('Order', {
 // Synchroniser le modèle avec la base de données (à faire uniquement en développement)
 Order.sync();
 
-module.exports = Order;
+module.exports = { Order } ; // Pour exporter un objet avec la clé Order
+

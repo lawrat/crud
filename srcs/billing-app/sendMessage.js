@@ -25,7 +25,7 @@ async function sendMessage(order) {
 
 // Exemple de commande à envoyer
 const order = {
-    product_id: 52, // Remplacez par l'ID du produit
-    quantity: 5
+    product_id: 21, // Remplacez par l'ID du produit
+    quantity: 2
 };
 sendMessage(order);
